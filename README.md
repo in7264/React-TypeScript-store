@@ -5,7 +5,7 @@ The project simulates an online store where users can browse products, view deta
 
 ## Live Preview
 
-🔗 https://live-demo-link.com
+🔗 https://react-type-script-store.vercel.app
 
 ## Design Reference
 
