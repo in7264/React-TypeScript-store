@@ -14,15 +14,9 @@ export const Footer = () => {
     <div className={styles.footer}>
       <img className={styles.footer__logo} src={logo} alt="Logo" />
       <div className={styles.footer__links}>
-        <a href="https://github.com/in7264/react_phone-catalog/tree/develop">
-          Github
-        </a>
-        <a href="https://github.com/in7264/react_phone-catalog/tree/develop">
-          Contacts
-        </a>
-        <a href="https://github.com/in7264/react_phone-catalog/tree/develop">
-          rights
-        </a>
+        <a href="https://github.com/in7264/React-TypeScript-store">Github</a>
+        <a href="https://github.com/in7264/React-TypeScript-store">Contacts</a>
+        <a href="https://github.com/in7264/React-TypeScript-store">rights</a>
       </div>
       <div className={styles.footer__backToTop} onClick={scrollToTop}>
         Back to top
