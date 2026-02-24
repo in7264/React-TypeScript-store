@@ -86,6 +86,7 @@
     aspect-ratio: 1/1;
     object-fit: contain;
     padding: 1px;
+    cursor: pointer;
 
     @include tablet {
       height: 35px;
@@ -150,6 +151,11 @@
     height: 1px;
     background-color: var(--elements-color);
     margin: 24px 0;
+  }
+
+  &__capacities {
+    @include font-desktop-small;
+    color: var(--secondary-color);
   }
 
   &__avaliableCapacity {
@@ -219,6 +225,7 @@
     display: flex;
     gap: 8px;
     height: 48px;
+    cursor: pointer;
 
     :first-child {
       flex: 1;

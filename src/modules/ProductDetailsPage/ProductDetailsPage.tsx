@@ -74,8 +74,12 @@ export const ProductDetailsPage = () => {
   };
 
   const getSuggestedProducts = useCallback(
-    (products: Product[], currentProductId: string, count = 20): Product[] => {
-      const otherProducts = products.filter(
+    (
+      allProducts: Product[],
+      currentProductId: string,
+      count = 20,
+    ): Product[] => {
+      const otherProducts = allProducts.filter(
         product =>
           product.itemId !== currentProductId && product.category === type,
       );
@@ -162,23 +166,28 @@ export const ProductDetailsPage = () => {
   }, [currentProductsType, id, products]);
 
   useEffect(() => {
+    if (!currentProduct) {
+      return;
+    }
+
     const findProduct = currentProductsType.find(item => {
       return (
-        item.namespaceId === currentProduct?.namespaceId &&
+        item.namespaceId === currentProduct.namespaceId &&
         item.color === currentColor &&
         item.capacity === currentCapacity
       );
     });
 
-    if (findProduct && findProduct.id !== id) {
+    if (findProduct && findProduct.id !== currentProduct.id) {
       navigate(`/${type}/${findProduct.id}`, { replace: true });
     }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [
     currentColor,
     currentCapacity,
     currentProductsType,
-    id,
-    currentProduct?.namespaceId,
+    currentProduct,
     navigate,
     type,
   ]);
